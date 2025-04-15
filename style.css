@@ -1,0 +1,108 @@
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+/* Reset default browser styles */
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+
+    background-color: #030637;
+    color: #910A67;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Add reusable helpers (e.g., text-center, spacing) */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+  }
+
+/* ========================================
+   LAYOUT STYLES
+   ======================================== */
+
+/* Layout containers, sections, grids */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ========================================
+   HEADER / NAVIGATION
+   ======================================== */
+
+.logo{
+    text-align: left;
+    font-family: 'Baloo Tamma 2', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #910A67;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.site-header {
+    background: #3C0753;
+    padding: 1rem 0;
+}
+
+.site-header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.topnav ul{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.topnav a{
+    text-decoration: none;
+    color: #910A67;
+}
+/* ========================================
+HERO SECTION
+======================================== */
+
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+
+
+/* ========================================
+PROJECTS SECTION
+======================================== */
