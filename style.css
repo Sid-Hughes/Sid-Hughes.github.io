@@ -446,3 +446,178 @@ footer {
     color: rgba(255, 255, 255, 0.3);
     margin-top: 1rem;
 }
+
+/* ========================================
+   PROJECT CARDS — LINK RESET
+   ======================================== */
+
+a.project-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ========================================
+   PROJECT DETAIL PAGE
+   ======================================== */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: hsl(274, 66%, 80%);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 2.5rem 0 2rem;
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
+.pd-header {
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    margin-bottom: 3rem;
+}
+
+.pd-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: hsl(274, 66%, 70%);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.pd-title {
+    font-family: 'Baloo Tamma 2', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.pd-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+}
+
+.pd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.pd-meta-item {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pd-meta-item strong {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+}
+
+.pd-body {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    padding-bottom: 5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .pd-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pd-section {
+    margin-bottom: 2.5rem;
+}
+
+.pd-section h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.pd-section p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+}
+
+.pd-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.pd-list li {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.pd-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: hsl(274, 66%, 70%);
+}
+
+.pd-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.pd-sidebar-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.pd-sidebar-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.pd-sidebar-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+}
+
+.pd-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: hsl(274, 66%, 80%);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.pd-link:hover {
+    text-decoration: underline;
+}
