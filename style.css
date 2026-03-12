@@ -62,65 +62,169 @@ body {
    HEADER / NAVIGATION
    ======================================== */
 
-.logo{
-    text-align: left;
-    font-family: 'Baloo Tamma 2', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: hsl(274, 66%, 80%);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.75rem 0;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-.site-header {
-    padding: 1rem 0;
+.site-header.scrolled {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(139, 92, 246, 0.2);
+}
+
+/* Push main content down so it doesn't sit under the fixed header */
+body {
+    padding-top: 70px;
 }
 
 .site-header__wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* SH initials logo */
+.nav-logo {
+    font-family: 'Baloo Tamma 2', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: hsl(274, 66%, 80%);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+    color: #fff;
+}
+
+/* Desktop nav links */
+.topnav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
     align-items: center;
 }
 
-
-.topnav ul{
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.topnav a{
+.topnav a {
     text-decoration: none;
-    color: hsl(274, 66%, 80%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.2s ease;
 }
-svg {
+
+/* Hover underline animation */
+.topnav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(274, 66%, 70%);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+.topnav a:hover {
+    color: #fff;
+}
+
+.topnav a:hover::after,
+.topnav a.active::after {
+    width: 100%;
+}
+
+.topnav a.active {
+    color: hsl(274, 66%, 85%);
+}
+
+/* Hamburger SVG */
+#menu-toggle {
+    display: none;
     fill-rule: evenodd;
     clip-rule: evenodd;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 1.5;
-    cursor:pointer;
-    padding-bottom: 0.75rem;
+    cursor: pointer;
+    flex-shrink: 0;
 }
-svg path {
+
+#menu-toggle path {
     fill: none;
     stroke: hsl(274, 66%, 80%);
     stroke-width: 2px;
 }
-svg + svg {
-    margin-left: 1.5rem;
+
+#menu-toggle.active #top,
+#menu-toggle.active #bottom {
+    stroke-dasharray: 75.39;
+    stroke-dashoffset: -60;
 }
-svg.active #top,
-svg.active #bottom {
-stroke-dasharray: 75.39;
-stroke-dashoffset: -60;
-}
+
 #top,
 #bottom {
-stroke-dasharray: 30, 75.39;
-transition: all 0.6s cubic-bezier(0.6, 0.33, 0.67, 1.29);
+    stroke-dasharray: 30, 75.39;
+    transition: all 0.6s cubic-bezier(0.6, 0.33, 0.67, 1.29);
+}
+
+/* Mobile nav */
+@media (max-width: 700px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    .topnav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+        padding: 0 1rem;
+    }
+
+    .topnav.open {
+        max-height: 300px;
+        padding: 1rem;
+    }
+
+    .topnav ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .topnav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .topnav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .topnav a {
+        display: block;
+        padding: 0.85rem 0;
+        font-size: 1rem;
+    }
 }
 /* ========================================
    SHARED SECTION STYLES

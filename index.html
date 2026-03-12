@@ -11,23 +11,26 @@
     <title>Sidney Hughes Portfolio</title>
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <div class="container">
             <div class="site-header__wrapper">
-                <nav class="topnav">
+                <a href="#hero" class="nav-logo">SH</a>
+                <nav class="topnav" id="topnav">
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#hero" data-section="hero">Home</a></li>
+                        <li><a href="#about" data-section="about">About Me</a></li>
+                        <li><a href="#projects" data-section="projects">Projects</a></li>
+                        <li><a href="#contact" data-section="contact">Contact</a></li>
                     </ul>
                 </nav>
                 <svg
+                id="menu-toggle"
                 width="50"
                 height="50"
                 viewBox="0 0 32 42"
                 xmlns="http://www.w3.org/2000/svg"
-                onclick="this.classList.toggle('active')"
+                aria-label="Toggle menu"
+                role="button"
                 >
                     <g transform="matrix(1,0,0,1,-389.5,-264.004)">
                     <g id="arrow_left2">
@@ -147,5 +150,48 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const topnav = document.getElementById('topnav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            topnav.classList.toggle('open');
+        });
+
+        // Close menu when a nav link is clicked
+        topnav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                topnav.classList.remove('open');
+            });
+        });
+
+        // Sticky header: add scrolled class for backdrop blur
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Active link highlighting via IntersectionObserver
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navLinks = document.querySelectorAll('.topnav a[data-section]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            'active',
+                            link.dataset.section === entry.target.id
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
 </body>
 </html>

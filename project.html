@@ -11,10 +11,11 @@
     <title>Project | Sidney Hughes</title>
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header scrolled" id="site-header">
         <div class="container">
             <div class="site-header__wrapper">
-                <nav class="topnav">
+                <a href="index.html#hero" class="nav-logo">SH</a>
+                <nav class="topnav" id="topnav">
                     <ul>
                         <li><a href="index.html#hero">Home</a></li>
                         <li><a href="index.html#about">About Me</a></li>
@@ -23,11 +24,13 @@
                     </ul>
                 </nav>
                 <svg
+                id="menu-toggle"
                 width="50"
                 height="50"
                 viewBox="0 0 32 42"
                 xmlns="http://www.w3.org/2000/svg"
-                onclick="this.classList.toggle('active')"
+                aria-label="Toggle menu"
+                role="button"
                 >
                     <g transform="matrix(1,0,0,1,-389.5,-264.004)">
                     <g id="arrow_left2">
@@ -125,6 +128,21 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const topnav = document.getElementById('topnav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            topnav.classList.toggle('open');
+        });
+        topnav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                topnav.classList.remove('open');
+            });
+        });
+    </script>
     <script>
         const projects = {
             'jewellery-shop': {
