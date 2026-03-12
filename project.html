@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Project | Sidney Hughes</title>
+</head>
+<body>
+    <header class="site-header scrolled" id="site-header">
+        <div class="container">
+            <div class="site-header__wrapper">
+                <a href="index.html#hero" class="nav-logo">SH</a>
+                <nav class="topnav" id="topnav">
+                    <ul>
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <svg
+                id="menu-toggle"
+                width="50"
+                height="50"
+                viewBox="0 0 32 42"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Toggle menu"
+                role="button"
+                >
+                    <g transform="matrix(1,0,0,1,-389.5,-264.004)">
+                    <g id="arrow_left2">
+                        <g transform="matrix(1,0,0,1,0,5)">
+                        <path
+                            id="top"
+                            d="M390,270L420,270L420,270C420,270 420.195,250.19 405,265C389.805,279.81 390,279.967 390,279.967"
+                        />
+                        </g>
+                        <g
+                        transform="matrix(1,1.22465e-16,1.22465e-16,-1,0.00024296,564.935)"
+                        >
+                        <path
+                            id="bottom"
+                            d="M390,270L420,270L420,270C420,270 420.195,250.19 405,265C389.805,279.81 390,279.967 390,279.967"
+                        />
+                        </g>
+                        <path id="middle" d="M390,284.967L420,284.967" />
+                    </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">
+                <i class="fa fa-arrow-left"></i> Back to Projects
+            </a>
+
+            <div class="pd-header">
+                <div class="pd-tag" id="pd-tag"></div>
+                <h1 class="pd-title" id="pd-title"></h1>
+                <p class="pd-subtitle" id="pd-subtitle"></p>
+                <div class="pd-meta" id="pd-meta"></div>
+            </div>
+
+            <div class="pd-body">
+                <div class="pd-main">
+                    <section class="pd-section">
+                        <h2>Overview</h2>
+                        <p id="pd-overview"></p>
+                    </section>
+
+                    <section class="pd-section">
+                        <h2>The Problem</h2>
+                        <p id="pd-problem"></p>
+                    </section>
+
+                    <section class="pd-section">
+                        <h2>My Approach</h2>
+                        <p id="pd-approach"></p>
+                    </section>
+
+                    <section class="pd-section">
+                        <h2>Key Features</h2>
+                        <ul class="pd-list" id="pd-features"></ul>
+                    </section>
+
+                    <section class="pd-section">
+                        <h2>Outcome</h2>
+                        <p id="pd-outcome"></p>
+                    </section>
+                </div>
+
+                <aside class="pd-sidebar">
+                    <div class="pd-sidebar-card">
+                        <h3>Tech Stack</h3>
+                        <div class="skills" id="pd-stack"></div>
+                    </div>
+                    <div class="pd-sidebar-card">
+                        <h3>Status</h3>
+                        <p id="pd-status-text"></p>
+                    </div>
+                    <div class="pd-sidebar-card" id="pd-links-card">
+                        <h3>Links</h3>
+                        <div id="pd-links"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer__inner">
+            <h2 class="footer__title">Get In Touch</h2>
+            <p class="footer__subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+            <a href="mailto:your@email.com" class="btn btn--outline">Say Hello</a>
+            <div class="footer__socials">
+                <a href="#" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p class="footer__copy">&copy; 2025 Sidney Hughes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const topnav = document.getElementById('topnav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            topnav.classList.toggle('open');
+        });
+        topnav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                topnav.classList.remove('open');
+            });
+        });
+    </script>
+    <script>
+        const projects = {
+            'jewellery-shop': {
+                tag: 'Web Dev · Coming Soon',
+                title: 'Jewellery Shop Website',
+                subtitle: 'A clean, elegant website for a local jewellery business.',
+                meta: [
+                    { label: 'Type', value: 'Client Project' },
+                    { label: 'Timeline', value: '2025' },
+                    { label: 'Role', value: 'Solo Developer' },
+                ],
+                overview: 'A full website for a local jewellery shop, designed to showcase their product range, tell the brand story, and make it easy for customers to get in touch or place enquiries.',
+                problem: 'The shop had no online presence, meaning potential customers had no way to discover them outside of word of mouth. They needed a professional, easy-to-navigate site that reflected the quality and elegance of their products.',
+                approach: 'Built with clean HTML, CSS, and JavaScript — keeping the stack simple for easy handover and maintenance. The design prioritises high-quality product photography and a calm, luxurious aesthetic in line with the brand.',
+                features: [
+                    'Product showcase gallery with category filtering',
+                    'About the brand / story section',
+                    'Customer enquiry form',
+                    'Fully responsive for mobile and desktop',
+                    'Accessible, semantic HTML structure',
+                ],
+                outcome: 'Project currently in progress. The goal is a live site that gives the shop a credible, attractive online presence and drives customer enquiries.',
+                stack: ['HTML', 'CSS', 'JavaScript'],
+                status: 'In Progress — expected completion 2025.',
+                links: [],
+            },
+            'automation-pipeline': {
+                tag: 'Python · Automation',
+                title: 'Data Automation Pipeline',
+                subtitle: 'End-to-end Python pipeline for ingesting, cleaning, and transforming raw data.',
+                meta: [
+                    { label: 'Type', value: 'Personal / Work Project' },
+                    { label: 'Timeline', value: 'Placeholder' },
+                    { label: 'Role', value: 'Data Engineer' },
+                ],
+                overview: 'A placeholder project. Replace this with a real description of your automation pipeline once the project is underway.',
+                problem: 'Placeholder — describe the data problem this pipeline solves. What manual process does it replace? What data sources does it handle?',
+                approach: 'Placeholder — outline the technical approach. How is data ingested? What transformation steps are involved? How is output delivered?',
+                features: [
+                    'Automated data ingestion from multiple sources',
+                    'Cleaning and normalisation steps',
+                    'Scheduled execution via cron / task scheduler',
+                    'Error logging and alerting',
+                    'Output to structured format (CSV / database / API)',
+                ],
+                outcome: 'Placeholder — describe the impact. Time saved, errors reduced, stakeholder benefit.',
+                stack: ['Python', 'Pandas', 'SQL', 'Cron'],
+                status: 'Placeholder — update when project begins.',
+                links: [],
+            },
+            'data-dashboard': {
+                tag: 'Data Science',
+                title: 'Data Analysis Dashboard',
+                subtitle: 'An interactive dashboard for exploring and visualising datasets in real time.',
+                meta: [
+                    { label: 'Type', value: 'Personal / Work Project' },
+                    { label: 'Timeline', value: 'Placeholder' },
+                    { label: 'Role', value: 'Data Scientist' },
+                ],
+                overview: 'A placeholder project. Replace this with a real description of your dashboard once the project is underway.',
+                problem: 'Placeholder — describe the problem. What data needed to be visualised? Who are the stakeholders and what decisions does the dashboard support?',
+                approach: 'Placeholder — describe how the dashboard was built. What data sources feed into it? What visualisation library or tool was used?',
+                features: [
+                    'Interactive charts with filtering and drill-down',
+                    'Real-time or scheduled data refresh',
+                    'Key metric summary cards',
+                    'Exportable reports',
+                    'Responsive layout for different screen sizes',
+                ],
+                outcome: 'Placeholder — describe the outcome. How did it improve decision-making or reporting?',
+                stack: ['Python', 'Plotly / Dash', 'Pandas', 'SQL'],
+                status: 'Placeholder — update when project begins.',
+                links: [],
+            },
+        };
+
+        const id = new URLSearchParams(window.location.search).get('id');
+        const project = projects[id];
+
+        if (!project) {
+            document.querySelector('.project-detail').innerHTML =
+                '<div class="container" style="padding: 8rem 0; text-align:center; color: rgba(255,255,255,0.6)"><h2 style="color:#fff">Project not found</h2><p style="margin-top:1rem"><a href="index.html#projects" style="color:hsl(274,66%,80%)">Back to projects</a></p></div>';
+        } else {
+            document.title = project.title + ' | Sidney Hughes';
+            document.getElementById('pd-tag').textContent = project.tag;
+            document.getElementById('pd-title').textContent = project.title;
+            document.getElementById('pd-subtitle').textContent = project.subtitle;
+            document.getElementById('pd-overview').textContent = project.overview;
+            document.getElementById('pd-problem').textContent = project.problem;
+            document.getElementById('pd-approach').textContent = project.approach;
+            document.getElementById('pd-outcome').textContent = project.outcome;
+            document.getElementById('pd-status-text').textContent = project.status;
+
+            const meta = document.getElementById('pd-meta');
+            project.meta.forEach(m => {
+                const span = document.createElement('span');
+                span.className = 'pd-meta-item';
+                span.innerHTML = `<strong>${m.label}:</strong> ${m.value}`;
+                meta.appendChild(span);
+            });
+
+            const features = document.getElementById('pd-features');
+            project.features.forEach(f => {
+                const li = document.createElement('li');
+                li.textContent = f;
+                features.appendChild(li);
+            });
+
+            const stack = document.getElementById('pd-stack');
+            project.stack.forEach(s => {
+                const span = document.createElement('span');
+                span.className = 'skill-tag';
+                span.textContent = s;
+                stack.appendChild(span);
+            });
+
+            const linksCard = document.getElementById('pd-links-card');
+            const linksContainer = document.getElementById('pd-links');
+            if (project.links.length === 0) {
+                linksCard.style.display = 'none';
+            } else {
+                project.links.forEach(l => {
+                    const a = document.createElement('a');
+                    a.href = l.url;
+                    a.textContent = l.label;
+                    a.className = 'pd-link';
+                    a.target = '_blank';
+                    linksContainer.appendChild(a);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -11,25 +11,26 @@
     <title>Sidney Hughes Portfolio</title>
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <div class="container">
             <div class="site-header__wrapper">
-                <h1 class="logo">Sidney Hughes</h1>
-                <nav class="topnav">
+                <a href="#hero" class="nav-logo">SH</a>
+                <nav class="topnav" id="topnav">
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about me">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#project-ideas">Project Ideas</a></li>
-                        <li><a href="#contact">Contact Me</a></li>
+                        <li><a href="#hero" data-section="hero">Home</a></li>
+                        <li><a href="#about" data-section="about">About Me</a></li>
+                        <li><a href="#projects" data-section="projects">Projects</a></li>
+                        <li><a href="#contact" data-section="contact">Contact</a></li>
                     </ul>
                 </nav>
                 <svg
+                id="menu-toggle"
                 width="50"
                 height="50"
                 viewBox="0 0 32 42"
                 xmlns="http://www.w3.org/2000/svg"
-                onclick="this.classList.toggle('active')"
+                aria-label="Toggle menu"
+                role="button"
                 >
                     <g transform="matrix(1,0,0,1,-389.5,-264.004)">
                     <g id="arrow_left2">
@@ -57,25 +58,140 @@
     <main>
         
         <section id="hero">
-            <!-- This will contain Hero section -  -->
+            <div class="container hero__content">
+                <p class="hero__greeting">Hello, I'm</p>
+                <h1 class="hero__name">Sidney Hughes</h1>
+                <h2 class="hero__role">Data Scientist &amp; Python Developer</h2>
+                <p class="hero__tagline">I build automations and tools that make data work for you.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
         </section>
 
         <section id="about">
-            <!-- This will contain the about me section -->
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about__grid">
+                    <div class="about__text">
+                        <p>I'm a Data Scientist based in the UK with a passion for turning raw data into meaningful insights and practical tools. My work focuses on building Python-powered automations that save time, reduce manual effort, and help teams make better decisions.</p>
+                        <p>Whether it's designing data pipelines, building dashboards, or scripting end-to-end workflows, I enjoy solving problems that sit at the intersection of data and engineering.</p>
+                        <p>Outside of data science, I'm expanding into web development — building projects that bring data-driven ideas to life on the web.</p>
+                        <div class="skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Automation</span>
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="about__visual">
+                        <div class="about__card">
+                            <div class="about__stat">
+                                <span class="stat-number">Python</span>
+                                <span class="stat-label">Primary Language</span>
+                            </div>
+                            <div class="about__stat">
+                                <span class="stat-number">Data</span>
+                                <span class="stat-label">Driven Approach</span>
+                            </div>
+                            <div class="about__stat">
+                                <span class="stat-number">Auto</span>
+                                <span class="stat-label">mation Focused</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <section id="projects">
-            <!-- This will contain my projects section -->
-        </section>
-
-        <section id="future">
-            <!-- This will contain ideas for future projects -->
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects__grid">
+                    <a class="project-card" href="project.html?id=jewellery-shop">
+                        <div class="project-card__tag">Web Dev &bull; Coming Soon</div>
+                        <h3 class="project-card__title">Jewellery Shop Website</h3>
+                        <p class="project-card__desc">A full website for a local jewellery shop, showcasing products and enabling customer enquiries. Built to be clean, elegant, and easy to manage.</p>
+                        <div class="project-card__footer">
+                            <span class="project-card__status project-card__status--soon">In Progress</span>
+                        </div>
+                    </a>
+                    <a class="project-card" href="project.html?id=automation-pipeline">
+                        <div class="project-card__tag">Python &bull; Automation</div>
+                        <h3 class="project-card__title">Data Automation Pipeline</h3>
+                        <p class="project-card__desc">An end-to-end Python pipeline that ingests, cleans, and transforms raw data sources into structured outputs — reducing manual processing time significantly.</p>
+                        <div class="project-card__footer">
+                            <span class="project-card__status project-card__status--placeholder">Placeholder</span>
+                        </div>
+                    </a>
+                    <a class="project-card" href="project.html?id=data-dashboard">
+                        <div class="project-card__tag">Data Science</div>
+                        <h3 class="project-card__title">Data Analysis Dashboard</h3>
+                        <p class="project-card__desc">An interactive dashboard for exploring and visualising datasets, providing stakeholders with real-time insights through intuitive charts and filters.</p>
+                        <div class="project-card__footer">
+                            <span class="project-card__status project-card__status--placeholder">Placeholder</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <!-- Add general links and contact section -->
+    <footer id="contact">
+        <div class="container footer__inner">
+            <h2 class="footer__title">Get In Touch</h2>
+            <p class="footer__subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+            <a href="mailto:your@email.com" class="btn btn--outline">Say Hello</a>
+            <div class="footer__socials">
+                <a href="#" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p class="footer__copy">&copy; 2025 Sidney Hughes. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const topnav = document.getElementById('topnav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            topnav.classList.toggle('open');
+        });
+
+        // Close menu when a nav link is clicked
+        topnav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                topnav.classList.remove('open');
+            });
+        });
+
+        // Sticky header: add scrolled class for backdrop blur
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Active link highlighting via IntersectionObserver
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navLinks = document.querySelectorAll('.topnav a[data-section]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            'active',
+                            link.dataset.section === entry.target.id
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
 </body>
 </html>
